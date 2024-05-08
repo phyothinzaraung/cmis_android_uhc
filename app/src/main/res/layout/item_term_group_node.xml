@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/colorTermGroupNodeBg"
+              android:gravity="center_vertical"
+              android:orientation="horizontal"
+              android:paddingBottom="12dp"
+              android:paddingEnd="6dp"
+              android:paddingStart="6dp"
+              android:paddingTop="12dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/itemTermGroupNode_ivExpandStatusIndicator"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="35dp"
+            android:src="@drawable/ic_drop_down"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/itemTermGroupNode_tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="18sp"
+            tools:text="Title"/>
+
+    <FrameLayout
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="8dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/itemTermGroupNode_ivSelectStatus"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:src="@drawable/not_done"/>
+
+        <CheckBox
+                android:id="@+id/itemTermGroupNode_cbSelect"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:button="@android:color/transparent"/>
+
+    </FrameLayout>
+
+</LinearLayout>
+

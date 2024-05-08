@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "364566221203",
+    "firebase_url": "https://suncmis-ebb86.firebaseio.com",
+    "project_id": "suncmis-ebb86",
+    "storage_bucket": "suncmis-ebb86.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364566221203:android:2c3d6bedc8dc87e61d1866",
+        "android_client_info": {
+          "package_name": "com.koekoetech.clinic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "364566221203-n8j8l5n1c4ob69196o63v6u3q6ji0liq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQWWMeaGdtCq8wGW3q8ch9QHa2hqvPX1g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "364566221203-n8j8l5n1c4ob69196o63v6u3q6ji0liq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

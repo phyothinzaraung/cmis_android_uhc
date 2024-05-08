@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   xmlns:tools="http://schemas.android.com/tools"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:layout_margin="8dp"
+                                   android:clickable="false"
+                                   android:focusable="false"
+                                   app:cardBackgroundColor="@color/color_white"
+                                   app:cardCornerRadius="0dp"
+                                   app:cardElevation="2dp"
+                                   app:contentPadding="0dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Demographic:"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/txt_size_ex_large"
+                android:textStyle="bold"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilNameInEnglish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtNameInEnglish"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtNameInBurmese"
+                    tools:ignore="LabelFor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilNameInBurmese"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtNameInBurmese"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtPatientAge"
+                    tools:ignore="LabelFor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Gender*"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/txt_size_ex_large"/>
+
+        <com.koekoetech.clinic.view.SegmentedGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:nextFocusDown="@id/uhcRegistration_spinnerMaritalStatus"
+                app:sc_border_width="1dp"
+                app:sc_checked_text_color="#ffffff"
+                app:sc_corner_radius="10dp"
+                app:sc_tint_color="#2196f3">
+
+            <RadioButton
+                    android:id="@+id/uhcRegistration_radioGenderMale"
+                    style="@style/RadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Male"/>
+
+            <RadioButton
+                    android:id="@+id/uhcRegistration_radioGenderFemale"
+                    style="@style/RadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Female"/>
+
+        </com.koekoetech.clinic.view.SegmentedGroup>
+
+        <TextView
+                android:id="@+id/uhcRegistration_txtMaritalStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Marital Status"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/txt_size_ex_large"/>
+
+        <FrameLayout
+                android:id="@+id/uhcRegistration_frameLayoutMaritalStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_stroke">
+
+            <Spinner
+                    android:id="@+id/uhcRegistration_spinnerMaritalStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginTop="18dp"
+                    android:entries="@array/marital_status"
+                    android:prompt="@string/education"/>
+
+        </FrameLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilDOB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clickable="false"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtDOB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:hint="DOB*(dd/mm/yyyy)"
+                    android:inputType="text"
+                    android:maxLines="1"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:baselineAligned="false">
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/uhcRegistration_tilPatientAge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    style="@style/AppTextInputLayout"
+                    android:gravity="center">
+
+                <EditText
+                        android:id="@+id/uhcRegistration_edtPatientAge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789"
+                        android:hint="Age*"
+                        android:imeOptions="flagNoExtractUi|actionNext"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:maxLines="1"
+                        android:nextFocusDown="@id/uhcRegistration_edtPhone"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_weight="1"
+                          android:orientation="vertical">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="Age Type"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="@dimen/txt_size_small"/>
+
+                <com.koekoetech.clinic.view.SegmentedGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:sc_border_width="1dp"
+                        app:sc_checked_text_color="#ffffff"
+                        app:sc_corner_radius="10dp"
+                        app:sc_tint_color="#2196f3">
+
+                    <RadioButton
+                            android:id="@+id/uhcRegistration_radioAgeYear"
+                            style="@style/RadioButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Year"/>
+
+                    <RadioButton
+                            android:id="@+id/uhcRegistration_radioAgeMonth"
+                            style="@style/RadioButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Month"/>
+
+                </com.koekoetech.clinic.view.SegmentedGroup>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="phone"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtContactPerson"
+                    tools:ignore="LabelFor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilContactPerson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtContactPerson"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtPatientAddress"
+                    tools:ignore="LabelFor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="State/Division*"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/txt_size_ex_large"/>
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_stroke">
+
+            <Spinner
+                    android:id="@+id/uhcRegistration_spinnerState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:nextFocusDown="@id/uhcRegistration_spinnerTownship"/>
+
+        </FrameLayout>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Township*"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/txt_size_ex_large"/>
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_stroke">
+
+            <Spinner
+                    android:id="@+id/uhcRegistration_spinnerTownship"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:nextFocusDown="@id/uhcRegistration_edtPatientAddress"/>
+
+        </FrameLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilPatientAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtPatientAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtOccupation"
+                    tools:ignore="LabelFor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilOccupation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtOccupation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Occupation"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtBodyWeight"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

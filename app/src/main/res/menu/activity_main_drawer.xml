@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_uhc_patient"
+            android:icon="@mipmap/patient_in_ward"
+            android:title="@string/uhc_patients" />
+
+        <item
+            android:id="@+id/nav_uhc_followup_patient"
+            android:icon="@mipmap/followup_patients"
+            android:title="@string/uhc_followup_patients" />
+
+        <item
+            android:id="@+id/nav_uhc_report"
+            android:icon="@mipmap/report"
+            android:title="@string/uhc_reports" />
+
+        <item
+            android:id="@+id/nav_feedback"
+            android:icon="@mipmap/feedback"
+            android:title="@string/feedback" />
+
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@mipmap/nav_setting"
+            android:title="@string/action_settings" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@mipmap/logout"
+            android:title="@string/logout" />
+
+    </group>
+
+</menu>

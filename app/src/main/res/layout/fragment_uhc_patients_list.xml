@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/uhcPatientsListSwipeRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_default_bg_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--region List Info Header-->
+        <TextView
+            android:id="@+id/uhcPatientsListTvCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_size_ex_large"
+            app:layout_constraintEnd_toStartOf="@+id/uhcPatientsListBtnAdvanceSearch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uhcPatientsListTvLblCount"
+            tools:text="3 patients" />
+
+        <TextView
+            android:id="@+id/uhcPatientsListTvClearSearchMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/msg_patient_list_clear_search"
+            android:textColor="@color/secondary_text"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uhcPatientsListTvCount"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/uhcPatientsListTvLblCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/lbl_patient_list_information"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/txt_size_normal"
+            app:layout_constraintEnd_toStartOf="@+id/uhcPatientsListBtnAdvanceSearch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/uhcPatientsListBtnAdvanceSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="8dp"
+            android:text="@string/advance_search_text"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
+            app:backgroundTint="@android:color/white"
+            app:icon="@drawable/icon_advance_search"
+            app:iconSize="15dp"
+            app:iconTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/uhcPatientsListTvCount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/uhcPatientsListTvLblCount" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/uhcPatientsListGroupInfoHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="uhcPatientsListBtnAdvanceSearch,uhcPatientsListTvLblCount,uhcPatientsListTvCount" />
+        <!--endregion-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/uhcPatientsRvList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="8dp"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/uhcPatientsListTvClearSearchMessage"
+            tools:listitem="@layout/layout_item_uhc_patient" />
+
+        <!--region Loading View-->
+
+        <ProgressBar
+            android:id="@+id/uhcPatientsListPbLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:layout_constraintBottom_toTopOf="@+id/uhcPatientsListTvLoadingMsg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/uhcPatientsListTvLoadingMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_uhc_patient_list_loading"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/txt_size_ex_ex_ex_large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uhcPatientsListPbLoading" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/uhcPatientsListGroupLoadingView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:constraint_referenced_ids="uhcPatientsListPbLoading,uhcPatientsListTvLoadingMsg"/>
+
+        <!--endregion-->
+
+        <!--region Empty View-->
+
+        <ImageView
+            android:id="@+id/uhcPatientsListIvEmptyIcon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/no_patient_in_ward"
+            app:layout_constraintBottom_toTopOf="@+id/uhcPatientsListTvEmptyTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/uhcPatientsListTvEmptyTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@string/no_patients_yet"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_size_ex_large"
+            app:layout_constraintBottom_toTopOf="@+id/uhcPatientsListTvEmptyMsg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uhcPatientsListIvEmptyIcon" />
+
+        <TextView
+            android:id="@+id/uhcPatientsListTvEmptyMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/txt_no_patient"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/txt_size_normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uhcPatientsListTvEmptyTitle" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/uhcPatientsListGroupEmptyView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:constraint_referenced_ids="uhcPatientsListIvEmptyIcon,uhcPatientsListTvEmptyTitle,uhcPatientsListTvEmptyMsg" />
+
+        <!--endregion-->
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/uhcPatientsListContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="uhcPatientsListGroupInfoHeader,uhcPatientsRvList"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

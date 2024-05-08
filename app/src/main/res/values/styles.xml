@@ -1,0 +1,46 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/secondary_text</item>
+
+    </style>
+
+    <!--<style name="Base.Widget.Design.TabLayout" parent="android:Widget">-->
+    <!--<item name="tabMaxWidth">@dimen/design_tab_max_width</item>-->
+    <!--<item name="tabIndicatorColor">@color/color_white</item>-->
+    <!--<item name="tabIndicatorHeight">@null</item>-->
+    <!--<item name="tabPaddingStart">12dp</item>-->
+    <!--<item name="tabPaddingEnd">12dp</item>-->
+    <!--<item name="tabBackground">@color/color_white</item>-->
+    <!--<item name="tabTextAppearance">@style/AppTheme.TextAppearance.Design.Tab</item>-->
+    <!--<item name="tabSelectedTextColor">@color/colorPrimary</item>-->
+    <!--</style>-->
+
+    <declare-styleable name="MaxHeightScrollView">
+        <attr name="max_height" format="dimension"/>
+    </declare-styleable>
+
+    <style name="RadioButton">
+        <item name="android:textColor">@drawable/button_text_color</item>
+        <item name="android:minHeight">33dp</item>
+        <item name="android:minWidth">70dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+    </style>
+
+    <style name="WhiteProgressTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorAccent">@android:color/white</item>
+    </style>
+
+    <style name="AppTextInputLayout" parent="Widget.Design.TextInputLayout" />
+
+</resources>

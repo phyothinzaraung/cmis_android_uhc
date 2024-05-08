@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:padding="?dialogPreferredPadding">
+
+    <TextView
+            android:id="@+id/tv_progress_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text"
+            android:layout_marginBottom="15dp"
+            android:textSize="@dimen/txt_size_ex_large"
+            android:textStyle="bold"
+            tools:text="Progress Title"/>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+        <ProgressBar
+                android:id="@+id/dialog_progress_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="15dp"
+                android:indeterminate="true"/>
+
+        <TextView
+                android:id="@+id/tv_progress_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/dialog_progress_view"
+                android:textSize="@dimen/txt_size_large"
+                tools:text="Progress message"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

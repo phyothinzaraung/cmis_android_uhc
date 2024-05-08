@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   xmlns:tools="http://schemas.android.com/tools"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:layout_margin="8dp"
+                                   android:clickable="false"
+                                   android:focusable="false"
+                                   app:cardBackgroundColor="@color/color_white"
+                                   app:cardCornerRadius="0dp"
+                                   app:cardElevation="2dp"
+                                   app:contentPadding="0dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Relevant Medical Information:"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/txt_size_ex_large"
+                android:textStyle="bold"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilBodyWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtBodyWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789."
+                    android:imeOptions="flagNoExtractUi|actionNext"
+                    android:inputType="numberDecimal"
+                    android:maxLength="3"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtHeightInFt"
+                    tools:ignore="LabelFor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilHeightInFt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtHeightInFt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789."
+                    android:imeOptions="flagNoExtractUi|actionNext"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtHeightInInches"
+                    tools:ignore="LabelFor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilHeightInInches"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtHeightInInches"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtMuac"
+                    tools:ignore="LabelFor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilMuac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtMuac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:nextFocusDown="@+id/uhcRegistration_edtImmunizationStatus"
+                    tools:ignore="LabelFor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilImmunizationStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtImmunizationStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:nextFocusDown="@+id/uhcRegistration_edtSymbolicBP"
+                    tools:ignore="LabelFor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilSymbolicBP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtSystolicBP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtDiastolicBP"
+                    tools:ignore="LabelFor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilDiastolicBP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtDiastolicBP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtRBS"
+                    tools:ignore="LabelFor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilRBS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtRBS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="RBS(mg/dl)"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtKnownAllergies"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilKnownAllergies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtKnownAllergies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtPreviousMedicalHistory"
+                    tools:ignore="LabelFor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+                android:id="@+id/uhcRegistration_txtPregnancyStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Pregnancy Status"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/txt_size_ex_large"/>
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_stroke">
+
+            <Spinner
+                    android:id="@+id/uhcRegistration_spinnerPregnancyStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginTop="18dp"
+                    android:entries="@array/pregnancy_status"
+                    android:prompt="@string/education"/>
+
+        </FrameLayout>
+
+        <TextView
+                android:id="@+id/uhcRegistration_txtCurrentContraceptiveStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Current Contraceptive Status"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/txt_size_ex_large"/>
+
+        <FrameLayout
+                android:id="@+id/uhcRegistration_frameLayoutCurrentContraceptiveStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_stroke">
+
+            <Spinner
+                    android:id="@+id/uhcRegistration_spinnerCurrentContraceptiveStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginTop="18dp"
+                    android:entries="@array/current"
+                    android:nextFocusDown="@id/uhcRegistration_edtPreviousMedicalHistory"
+                    android:prompt="@string/education"/>
+
+        </FrameLayout>
+
+        <TextView
+                android:id="@+id/uhcRegistration_txtRiskFactor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Risk Factor"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/txt_size_ex_large"/>
+
+        <FrameLayout
+                android:id="@+id/uhcRegistration_frameLayoutRiskFactor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_stroke">
+
+            <com.koekoetech.clinic.helper.MultiSelectSpinner
+                    android:id="@+id/uhcRegistration_multiSelectRiskFactor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginTop="18dp"
+                    android:nextFocusDown="@id/uhcRegistration_edtPreviousMedicalHistory"
+                    android:prompt="@string/education"/>
+
+        </FrameLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilPreviousMedicalHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtPreviousMedicalHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Previous Medical History"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtPreviousSurgicalHistory"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilPreviousSurgicalHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtPreviousSurgicalHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Previous Surgical History"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtRelevantFamilyHistory"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilRelevantFamilyHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtRelevantFamilyHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Relevant Family History"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="text"
+                    android:maxLines="1"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/color_grey_border"/>
+
+        <RelativeLayout
+                android:id="@+id/uhcRegistration_layoutSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_btn_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <ImageView
+                    android:id="@+id/uhcRegistration_ivSave"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="5dp"
+                    android:contentDescription="@string/image_content_desc"
+                    android:padding="12dp"
+                    android:src="@drawable/save"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/uhcRegistration_ivSave"
+                    android:text="Save"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/txt_size_ex_large"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#25a9f7</color>
+    <color name="colorPrimaryDark">#2c85d5</color>
+    <color name="colorAccent">#64c0f7</color>
+    <color name="primary_text">#656565</color>
+    <color name="secondary_text">#9a9a9a</color>
+    <color name="color_white">#ffffff</color>
+    <color name="color_default_bg_color_dark">#ededed</color>
+    <color name="color_default_bg_color">#f3f3f3</color>
+    <color name="color_black">#000000</color>
+    <color name="black_semi_transparent">#B2000000</color>
+    <color name="nav_bg_badge">#00a651</color>
+    <color name="color_grey_border">#efefef</color>
+    <color name="color_compliant">#ff9f75</color>
+    <color name="color_compliant_dark">#df8761</color>
+    <color name="color_service">#ea4c89</color>
+    <color name="color_service_dark">#d13976</color>
+    <color name="color_problem">#ff8c8c</color>
+    <color name="color_problem_dark">#d87272</color>
+    <color name="color_reason">#A569BD</color>
+    <color name="color_reason_dark">#7D3C98</color>
+    <color name="color_observation">#0AC92A</color>
+    <color name="color_observation_dark">#027F17</color>
+    <color name="color_investigation">#DC7633</color>
+    <color name="color_investigation_dark">#BA4A00</color>
+    <color name="color_treatment">#CACE08</color>
+    <color name="color_treatment_dark">#98A605</color>
+    <color name="color_requests">#20DBCF</color>
+    <color name="color_requests_dark">#0FA89E</color>
+    <color name="color_referral">#FD04C7</color>
+    <color name="color_referral_dark">#DE16B2</color>
+    <color name="color_tab_text">#BDBDBD</color>
+    <color name="radio_button_selected_color">#ff33b5e5</color>
+    <color name="radio_button_unselected_color">@android:color/transparent</color>
+
+    <color name="base">#FFFFFB</color>
+    <color name="overlay">#AA1C1C1C</color>
+    <color name="handle">#86C166</color>
+    <color name="frame">#86C166</color>
+    <color name="guide">#AA86C166</color>
+    <color name="colorIcons">#FFFFFF</color>
+
+    <color name="colorChapterNodeBg">#c6f7c8cd</color>
+    <color name="colorTermGroupNodeBg">#affad5c6</color>
+
+</resources>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   xmlns:tools="http://schemas.android.com/tools"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:layout_margin="8dp"
+                                   android:clickable="false"
+                                   android:focusable="false"
+                                   app:cardBackgroundColor="@color/color_white"
+                                   app:cardCornerRadius="0dp"
+                                   app:cardElevation="2dp"
+                                   app:contentPadding="0dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:baselineAligned="false"
+            android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilUID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/AppTextInputLayout"
+                android:gravity="center"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtUID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="UIC Code"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtHHCode"
+                    tools:ignore="LabelFor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilHHCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:visibility="gone"
+                style="@style/AppTextInputLayout"
+                tools:visibility="visible">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtHHCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtHHMemberCode"
+                    tools:ignore="LabelFor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilHHMemberCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                style="@style/AppTextInputLayout"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtHHMemberCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtRegistrationDate"
+                    tools:ignore="LabelFor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/uhcRegistration_tilRegistrationDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                style="@style/AppTextInputLayout"
+                android:gravity="center">
+
+            <EditText
+                    android:id="@+id/uhcRegistration_edtRegistrationDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:inputType="date"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/uhcRegistration_edtNameInEnglish"
+                    tools:ignore="LabelFor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

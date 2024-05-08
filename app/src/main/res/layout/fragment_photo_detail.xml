@@ -1,0 +1,56 @@
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:gravity="center_vertical">
+
+    <ProgressBar
+            android:id="@+id/pb_photo_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="visible"/>
+
+    <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/iv_lg_photo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/image_content_desc"
+            tools:src="@mipmap/test"/>
+
+    <LinearLayout
+            android:id="@+id/retry_container_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/oops_failed_to_load_photo"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/txt_size_ex_large"
+        />
+
+        <Button
+                android:id="@+id/btn_reload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="@string/reload"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/txt_size_ex_large"
+        />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

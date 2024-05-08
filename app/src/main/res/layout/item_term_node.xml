@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:id="@+id/itemTermNode_layoutContainer"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+
+    <CheckBox
+            android:id="@+id/itemTermNode_cbSelect"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:button="@android:color/transparent"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="12dp"
+            android:paddingEnd="6dp"
+            android:paddingStart="6dp"
+            android:paddingTop="12dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/itemTermNode_tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="75dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:textColor="@android:color/primary_text_light"
+                android:textSize="18sp"
+                tools:text="Title"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/itemTermNode_ivSelectStatus"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/not_done"/>
+
+    </LinearLayout>
+
+</FrameLayout>

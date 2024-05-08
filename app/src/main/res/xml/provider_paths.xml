@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+
+    <!--internal app cache storage, Context#getCacheDir()-->
+    <cache-path
+        name="cache"
+        path="/" />
+
+    <!--external app cache storage, Context#getExternalCacheDir()-->
+    <external-cache-path
+        name="external_cache"
+        path="/" />
+
+    <!--internal app storage, Context#getFilesDir()-->
+    <files-path
+        name="files"
+        path="/" />
+
+    <!--external app storage, Context#getExternalFilesDir(null)-->
+    <external-files-path
+        name="external_files"
+        path="/" />
+
+    <!--public external storage, Environment.getExternalStorageDirectory()-->
+    <external-path
+        name="external_app_storage"
+        path="/" />
+
+
+</paths>

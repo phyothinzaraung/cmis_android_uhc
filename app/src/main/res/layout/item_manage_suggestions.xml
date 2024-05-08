@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_suggestion_keyword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/txt_size_large"
+            tools:text="Word : Word Name" />
+
+        <TextView
+            android:id="@+id/tv_suggestion_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="@dimen/txt_size_large"
+            tools:text="Value : Word Value" />
+
+        <TextView
+            android:id="@+id/tv_suggestion_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="@dimen/txt_size_large"
+            tools:text="Type : Suggestion Type" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/secondary_text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_suggestionEdit"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/manage_suggestions_edit"
+                app:iconGravity="textStart"
+                app:icon="@drawable/edit"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_suggestionDelete"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/manage_suggestions_delete"
+                app:iconGravity="textStart"
+                app:icon="@drawable/delete"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/tv_suggestion_value_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_suggestion_keyword"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/manage_suggestions_word_value"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/txt_size_large"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tv_suggestion_type_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_suggestion_value_lbl"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/manage_suggestions_type"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/txt_size_large"
+            android:textStyle="bold" />
+
+
+        <View
+            android:id="@+id/suggestions_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/tv_suggestion_type_lbl"
+            android:layout_marginBottom="8dp"
+            android:background="@color/secondary_text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/suggestions_divider"
+            android:baselineAligned="false"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:id="@+id/suggestion_edt_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:padding="5dp"
+                tools:ignore="UnusedAttribute">
+
+                <ImageView
+                    android:id="@+id/imgv_sugggestion_edit"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="5dp"
+                    android:contentDescription="@string/image_content_desc"
+                    android:src="@mipmap/edit" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/imgv_sugggestion_edit"
+                    android:text="@string/manage_suggestions_edit"
+                    android:textSize="@dimen/txt_size_large" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/suggestion_delete_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:padding="5dp"
+                tools:ignore="UnusedAttribute">
+
+                <ImageView
+                    android:id="@+id/imgv_sugggestion_delete"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="5dp"
+                    android:contentDescription="@string/image_content_desc"
+                    android:src="@mipmap/edit" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/imgv_sugggestion_delete"
+                    android:text="@string/manage_suggestions_delete"
+                    android:textSize="@dimen/txt_size_large" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>-->
+
+</androidx.cardview.widget.CardView>

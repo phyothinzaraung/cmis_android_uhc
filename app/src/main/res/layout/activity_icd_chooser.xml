@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_default_bg_color"
+        tools:context=".activities.ICDChooserActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+            <requestFocus/>
+
+        </FrameLayout>
+
+        <FrameLayout
+                android:id="@+id/icdterms_searchContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext_main_search"
+                android:layout_alignParentTop="true"
+                android:padding="4dp"
+                android:layout_margin="4dp">
+
+            <EditText
+                    android:id="@+id/icdterms_edtSearchQuery"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="@string/hint_search"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:imeOptions="actionSearch"
+                    android:background="@android:color/transparent"
+                    tools:ignore="Autofill,TextFields"/>
+
+            <ImageButton
+                    android:id="@+id/icdterms_btnClearQuery"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="end|center_vertical"
+                    android:src="@drawable/ic_action_clear"
+                    android:background="@android:color/transparent"
+                    tools:ignore="ContentDescription"/>
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/icdterms_btnSelect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="4dp"
+                android:text="@string/icd_select"
+                style="@style/Widget.AppCompat.Button.Colored"/>
+
+        <FrameLayout
+                android:id="@+id/icdterms_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/icdterms_searchContainer"
+                android:layout_above="@id/icdterms_btnSelect">
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

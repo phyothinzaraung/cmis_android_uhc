@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_press_notes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_default_bg_color"
+        android:keepScreenOn="true"
+        tools:context="com.koekoetech.clinic.activities.UhcPatientProgressNotesFragmentActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:baselineAligned="false">
+
+        <fragment
+                android:id="@+id/progress_notes_fragment"
+                android:name="com.koekoetech.clinic.fragment.UhcPatientProgressNotesFragment"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+        />
+
+        <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7">
+
+            <TextView
+                    android:id="@+id/tv_empty_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/msg_progress_complete"
+                    android:textColor="@color/colorPrimary"
+                    android:drawablePadding="8dp"
+                    android:drawableTop="@drawable/checked"
+                    android:visibility="gone"
+            />
+
+            <fragment
+                    android:id="@+id/progress_note_create_fragment"
+                    android:name="com.koekoetech.clinic.fragment.UhcPatientProgressNoteCreateFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+            />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

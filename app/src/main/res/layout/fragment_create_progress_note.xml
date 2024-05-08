@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+            android:id="@+id/press_notes_types_container_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@android:color/white"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="2dp"
+            app:contentPadding="0dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_press_notes_types"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingEnd="10dp"
+                android:paddingStart="0dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_press_note"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <EditText
+            android:id="@+id/edt_press_note_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/chat_control_background"
+            android:gravity="start"
+            android:hint="@string/type_your_message_here"
+            android:inputType="textMultiLine"
+            android:padding="10dp"/>
+
+    <FrameLayout
+            android:id="@+id/layout_freeText"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/chat_control_background"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+        <TextView
+                android:id="@+id/txt_progressnote_freetext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"/>
+
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_press_notes_photos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/medical_record_photo_item"/>
+
+    <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout_input_type"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@android:color/white"
+            android:minHeight="32dp"
+            app:tabMode="scrollable"
+            app:tabIndicatorColor="@android:color/transparent"
+            app:tabSelectedTextColor="@android:color/black"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            app:tabTextColor="@color/color_tab_text"/>
+
+    <androidx.cardview.widget.CardView
+            android:id="@+id/subject_container_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="2dp"
+            app:contentPadding="5dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_press_notes_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_press_note_suggestion"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.koekoetech.clinic.helper.MaxHeightScrollView
+            android:id="@+id/press_note_word_scroll_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:max_height="150dp">
+
+        <co.lujun.androidtagview.TagContainerLayout
+                android:id="@+id/press_note_word_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@null"
+                android:padding="15dp"
+                app:container_background_color="#fff3f3f3"
+                app:container_enable_drag="false"
+                app:container_gravity="center"
+                app:horizontal_interval="20dp"
+                app:tag_background_color="@color/colorPrimaryDark"
+                app:tag_border_color="#fff3f3f3"
+                app:tag_clickable="true"
+                app:tag_ripple_alpha="10"
+                app:tag_ripple_duration="100"
+                app:tag_text_color="@color/color_white"
+                app:tag_theme="none"
+                app:vertical_interval="0dp"/>
+
+    </com.koekoetech.clinic.helper.MaxHeightScrollView>
+
+
+</LinearLayout>

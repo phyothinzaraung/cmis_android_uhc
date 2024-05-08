@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_white"
+              android:orientation="vertical">
+
+    <com.koekoetech.clinic.view.SegmentedGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="horizontal"
+            app:sc_border_width="1dp"
+            app:sc_checked_text_color="#ffffff"
+            app:sc_corner_radius="10dp"
+            app:sc_tint_color="#2196f3">
+
+        <RadioButton
+                android:id="@+id/feedbackList_rdoGeneral"
+                style="@style/RadioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/feedback_lbl_general"/>
+
+        <RadioButton
+                android:id="@+id/feedbackList_rdoBugReport"
+                style="@style/RadioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/feedback_lbl_bugs"/>
+
+    </com.koekoetech.clinic.view.SegmentedGroup>
+
+    <EditText
+            android:id="@+id/feedbackList_edtFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/edt_out_diagnosis"
+            android:digits="@string/digit"
+            android:gravity="top|start"
+            android:hint="@string/feedback_hint_type_feedback"
+            android:inputType="text"/>
+
+</LinearLayout>
+
+
+
+
+
+

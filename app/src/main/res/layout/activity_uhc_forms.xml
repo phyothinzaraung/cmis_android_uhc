@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                     xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                     xmlns:tools="http://schemas.android.com/tools"
+                                                     android:layout_width="match_parent"
+                                                     android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_default_bg_color"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
+
+            <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                <requestFocus/>
+
+            </FrameLayout>
+
+            <TextView
+                    android:id="@+id/uhc_forms_tvReportsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:text="@string/lbl_psi_program_reports"
+                    android:textSize="@dimen/txt_size_ex_large"/>
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/uhc_forms_card_rh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/color_white"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="2dp"
+                    app:contentPadding="0dp">
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+
+                    <ImageView
+                            android:id="@+id/uhcForms_ivRHShortTerm"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:contentDescription="@string/image_content_desc"
+                            android:src="@drawable/form"/>
+
+                    <ImageView
+                            android:id="@+id/uhcForms_ivRHShortTermDone"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:contentDescription="@string/image_content_desc"
+                            android:src="@drawable/checked"/>
+
+                    <TextView
+                            android:id="@+id/uhcForms_titleRHShortterm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/uhcForms_ivRHShortTerm"
+                            android:layout_toStartOf="@id/uhcForms_ivRHShortTermDone"
+                            android:text="@string/uhc_form_rh_short_term"
+                            android:textColor="@color/primary_text"
+                            android:textSize="@dimen/txt_size_ex_large"
+                            android:textStyle="bold"/>
+
+                    <TextView
+                            android:id="@+id/uhcForms_subtitletitleRHShortterm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/uhcForms_titleRHShortterm"
+                            android:layout_marginTop="5dp"
+                            android:layout_toEndOf="@id/uhcForms_ivRHShortTerm"
+                            android:layout_toStartOf="@id/uhcForms_ivRHShortTermDone"
+                            android:text="@string/uhc_form_rh_short_term_subtitle"
+                            android:textColor="@color/primary_text"
+                            android:textSize="@dimen/txt_size_small"/>
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_refer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/color_white"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="2dp"
+                    app:contentPadding="0dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/lbl_refer_to"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/txt_size_ex_large"/>
+
+                    <com.koekoetech.clinic.view.SegmentedGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="horizontal"
+                            app:sc_border_width="1dp"
+                            app:sc_checked_text_color="#ffffff"
+                            app:sc_corner_radius="10dp"
+                            app:sc_tint_color="#2196f3">
+
+                        <RadioButton
+                                android:id="@+id/radiobtn_SQH"
+                                style="@style/RadioButton"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:text="@string/lbl_sqh"/>
+
+                        <RadioButton
+                                android:id="@+id/radiobtn_private_hospital"
+                                style="@style/RadioButton"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/lbl_private_hospital"/>
+
+                        <RadioButton
+                                android:id="@+id/radiobtn_public_hospital"
+                                style="@style/RadioButton"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/lbl_public_hospital"/>
+
+                    </com.koekoetech.clinic.view.SegmentedGroup>
+
+                    <LinearLayout
+                            android:id="@+id/layout_togglebtn_group"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+                        <ToggleButton
+                                android:id="@+id/togglebtn_TB"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/toggle_day_bg_selector"
+                                android:textAllCaps="false"
+                                android:textColor="@android:color/white"
+                                android:textOff="@string/lbl_tb"
+                                android:textOn="@string/lbl_tb"
+                                android:textSize="@dimen/txt_size_normal"/>
+
+                        <ToggleButton
+                                android:id="@+id/togglebtn_HIV"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/toggle_day_bg_selector"
+                                android:textAllCaps="false"
+                                android:textColor="@android:color/white"
+                                android:textOff="@string/lbl_hiv"
+                                android:textOn="@string/lbl_hiv"
+                                android:textSize="@dimen/txt_size_normal"/>
+
+                        <ToggleButton
+                                android:id="@+id/togglebtn_RHLTM"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/toggle_day_bg_selector"
+                                android:textAllCaps="false"
+                                android:textColor="@android:color/white"
+                                android:textOff="@string/lbl_rhltm"
+                                android:textOn="@string/lbl_rhltm"
+                                android:textSize="@dimen/txt_size_normal"/>
+
+                        <ToggleButton
+                                android:id="@+id/togglebtn_CCP"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/toggle_day_bg_selector"
+                                android:textAllCaps="false"
+                                android:textColor="@android:color/white"
+                                android:textOff="@string/lbl_ccp"
+                                android:textOn="@string/lbl_ccp"
+                                android:textSize="@dimen/txt_size_normal"/>
+
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/layout_refer_SQH"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            style="@style/AppTextInputLayout"
+                            android:gravity="center"
+                            android:padding="8dp">
+
+                        <EditText
+                                android:id="@+id/txt_refer_doctor"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:focusable="false"
+                                android:hint="@string/hint_enter_sqh_doctor_name"
+                                android:inputType="text"
+                                android:maxLines="1"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/layout_refer_PrivateHospital"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:visibility="gone">
+
+                        <EditText
+                                android:id="@+id/txt_refer_privateHospital"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:hint="@string/hint_enter_private_hospital"
+                                android:inputType="text"
+                                android:maxLines="1"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/layout_refer_PublicHospital"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:padding="8dp"
+                            android:visibility="gone">
+
+                        <EditText
+                                android:id="@+id/txt_refer_publicHospital"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:hint="@string/hint_enter_public_hospital"
+                                android:inputType="text"
+                                android:maxLines="1"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/layout_refer_reason"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            style="@style/AppTextInputLayout"
+                            android:gravity="center"
+                            android:padding="8dp">
+
+                        <EditText
+                                android:id="@+id/txt_refer_reason"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:hint="@string/hint_enter_refer_reason"
+                                android:inputType="text"
+                                android:maxLines="1"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/color_grey_border"/>
+
+                    <LinearLayout
+                            android:id="@+id/linear_referto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="8dp"
+                            tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginEnd="5dp"
+                                android:contentDescription="@string/image_content_desc"
+                                android:src="@mipmap/discharge"/>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/lbl_refer_to"
+                                android:textSize="@dimen/txt_size_small"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_followup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/color_white"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="2dp"
+                    app:contentPadding="0dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp">
+
+                    <TextView
+                            android:id="@+id/lbl_follow_up"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/lbl_follow_up"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/txt_size_ex_large"/>
+
+                    <EditText
+                            android:id="@+id/txt_followup_date_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:hint="@string/hint_datetime"
+                            android:inputType="date"/>
+
+                    <EditText
+                            android:id="@+id/txt_followup_reason"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:hint="@string/hint_follow_up_reason"
+                            android:inputType="text"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/lbl_prescription"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/txt_size_ex_large"/>
+
+                    <EditText
+                            android:id="@+id/edt_current_diagnosis"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:hint="@string/lbl_current_diagnosis"
+                            android:inputType="text"/>
+
+                    <EditText
+                            android:id="@+id/edt_plan_of_care"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:hint="@string/lbl_plan_of_care"
+                            android:inputType="text"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/lbl_charges"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/txt_size_ex_large"/>
+
+                    <EditText
+                            android:id="@+id/txt_charges"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:hint="@string/hint_charges"
+                            android:inputType="number"/>
+
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/color_grey_border"/>
+
+                    <LinearLayout
+                            android:id="@+id/linear_save"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="10dp"
+                            tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginEnd="5dp"
+                                android:contentDescription="@string/image_content_desc"
+                                android:src="@mipmap/ic_save"/>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/action_save"
+                                android:textSize="@dimen/txt_size_small"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+

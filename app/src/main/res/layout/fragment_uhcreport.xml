@@ -1,0 +1,103 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:card_view="http://schemas.android.com/tools"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_default_bg_color"
+              android:orientation="vertical"
+              android:padding="12dp"
+              tools:context="com.koekoetech.clinic.fragment.UHCReportFragment">
+
+    <TextView
+            android:id="@+id/tvProviderReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/title_report_provider"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/txt_size_normal"/>
+
+    <androidx.cardview.widget.CardView
+            android:id="@+id/uhcReport_cvSummaryReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginBottom="12dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            card_view:cardBackgroundColor="@color/color_white"
+            card_view:cardCornerRadius="0dp"
+            card_view:cardElevation="2dp"
+            card_view:contentPadding="0dp">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+            <ImageView
+                    android:id="@+id/uhcReport_ivProvider"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:contentDescription="@string/image_content_desc"
+                    android:src="@drawable/form"/>
+
+            <TextView
+                    android:id="@+id/uhcReport_tvProTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toEndOf="@id/uhcReport_ivProvider"
+                    android:text="@string/title_report_summary"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/txt_size_ex_large"
+                    android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+            android:id="@+id/uhcReport_cvVisitsCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            card_view:cardBackgroundColor="@color/color_white"
+            card_view:cardCornerRadius="0dp"
+            card_view:cardElevation="2dp"
+            card_view:contentPadding="0dp">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+            <ImageView
+                    android:id="@+id/uhcReport_ivVisitsCount"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:contentDescription="@string/image_content_desc"
+                    android:src="@drawable/form"/>
+
+            <TextView
+                    android:id="@+id/uhcReport_tvVisitsCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toEndOf="@id/uhcReport_ivVisitsCount"
+                    android:text="@string/title_report_visits_count"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/txt_size_ex_large"
+                    android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

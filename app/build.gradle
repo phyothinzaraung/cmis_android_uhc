@@ -1,0 +1,111 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+
+android {
+
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "com.koekoetech.clinic"
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 17
+        versionName "1.3.3"
+        buildConfigField "String", "DEFAULT_BASE_URL", '"' + DEFAULT_BASE_URL + '"'
+        buildConfigField "String", "DEV_BASE_URL", '"' + DEV_BASE_URL + '"'
+        buildConfigField "String", "WEB_VIEW_BASE_URL", '"' + WEB_VIEW_BASE_URL + '"'
+        buildConfigField "String", "WEB_VIEW_BASE_URL_DEV", '"' + WEB_VIEW_BASE_URL_DEV + '"'
+        buildConfigField "String", "PROVIDER_REPORT_WEB_VIEW_URL", '"' + PROVIDER_REPORT_WEB_VIEW_URL + '"'
+        buildConfigField "String", "UHC_PROVIDER_REPORT_WEB_VIEW_URL", '"' + UHC_PROVIDER_REPORT_WEB_VIEW_URL + '"'
+        buildConfigField "String", "INTEGRATED_RECORD_WEB_VIEW_URL", '"' + INTEGRATED_RECORD_WEB_VIEW_URL + '"'
+        buildConfigField "String", "VISITS_COUNT_WEB_VIEW_URL", '"' + VISITS_COUNT_WEB_VIEW_URL + '"'
+        buildConfigField "String", "NCD_URL", '"' + NCD_URL + '"'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled = true
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue 'string', 'app_version', 'Version ' + defaultConfig.versionName
+            archivesBaseName = "CMIS_UHC_v${defaultConfig.versionName} (${new Date().format('dd MMMM yyyy hh-mm-ss a')})"
+            manifestPlaceholders = [analytics_deactivated: "false"]
+        }
+        debug {
+            resValue 'string', 'app_version', 'Version ' + defaultConfig.versionName + ' (Debug)'
+            archivesBaseName = "CMIS_UHC_v${defaultConfig.versionName} (${new Date().format('dd MMMM yyyy hh-mm-ss a')})"
+            manifestPlaceholders = [analytics_deactivated: "true"]
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.3.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    // Android Support Libraries
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    // Analytic
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:26.1.0')
+    implementation 'com.google.firebase:firebase-analytics'
+
+    // Retrofit Networking Library
+    //noinspection GradleDependency
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    //noinspection GradleDependency
+    implementation 'com.squareup.okhttp3:okhttp:3.12.3'
+    //noinspection GradleDependency
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+    //noinspection GradleDependency
+    implementation "com.squareup.okhttp3:logging-interceptor:3.12.3"
+
+    // Third Party UI Libraries
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'co.lujun:androidtagview:1.1.7'
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+    implementation 'com.crystal:crystalrangeseekbar:1.1.3'
+    implementation 'com.isseiaoki:simplecropview:1.1.8'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'me.texy.treeview:treeview_lib:1.0.5'
+    implementation 'com.andrognito.pinlockview:pinlockview:2.1.0'
+    annotationProcessor "com.github.bumptech.glide:compiler:4.12.0"
+
+    // Zing Barcode Scanner
+    implementation 'me.dm7.barcodescanner:zxing:1.9.13'
+
+    // Utilities Libraries
+    implementation 'com.zsoltsafrany:needle:1.0.0'
+    implementation 'net.gotev:uploadservice:3.4.2'
+    implementation 'com.mindorks.android:prdownloader:0.6.0'
+    implementation files('libs/zip4j_1.3.2.jar')
+    testImplementation 'junit:junit:4.13.2'
+    //    implementation 'com.squareup.picasso:picasso:2.5.2'
+    //    implementation 'com.github.iammert:MaterialIntroView:1.6.0'
+    //    implementation 'net.i2p.android.ext:floatingactionbutton:1.10.1'
+    //    implementation 'com.getbase:floatingactionbutton:1.10.1'
+    //    implementation 'uk.me.lewisdeane.ldialogs:ldialogs:1.2.0@aar'
+}
+apply plugin: 'com.google.gms.google-services'

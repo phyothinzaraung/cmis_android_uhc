@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_default_bg_color_dark"
+              android:orientation="vertical">
+
+    <include layout="@layout/toolbar"/>
+
+    <ProgressBar
+            android:id="@+id/activity_genericWvProgress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-7dp"
+            android:layout_marginTop="-7dp"
+            android:indeterminate="true"/>
+
+    <WebView
+            android:id="@+id/activity_genericWv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:visibility="gone"/>
+
+    <RelativeLayout
+            android:id="@+id/activity_genericWebViewErrorView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+        <View
+                android:id="@+id/activity_genericWebViewVDivider"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"/>
+
+        <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_above="@id/activity_genericWebViewVDivider"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_conn_err"
+                tools:ignore="ContentDescription"/>
+
+        <TextView
+                android:id="@+id/activity_genericWebViewTvErrMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/activity_genericWebViewVDivider"
+                android:text="@string/generic_wv_conn_err"
+                android:textAlignment="center"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/txt_size_ex_ex_ex_large"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/activity_genericWebViewTvErrMsg"
+                android:layout_marginTop="5dp"
+                android:text="@string/generic_wv_tap_to_reload"
+                android:textAlignment="center"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/txt_size_ex_large"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
